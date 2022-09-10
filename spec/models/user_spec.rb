@@ -19,11 +19,6 @@ RSpec.describe User, type: :model do
     expect(@user).to_not be_valid
   end
 
-  it 'posts_counter should be an integer' do
-    @user.posts_counter = 'a'
-    expect(@user).to_not be_valid
-  end
-
   it 'posts_counter cannot be less than 0' do
     @user.posts_counter = -1
     expect(@user).to_not be_valid
