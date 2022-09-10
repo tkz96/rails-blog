@@ -2,6 +2,11 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many :likes
+
+  validates :title, presence: true
+  validates :title, length: { maximum: 250 }
+  validates :comments_counter, comparison: { greater_than_or_equal_to: 0 }
+  validates :likes_counter, comparison: { greater_than_or_equal_to: 0 }
   def update_posts_counter
     # A method that updates the posts counter for a user.
     user.update(posts_counter: user.posts.count)
