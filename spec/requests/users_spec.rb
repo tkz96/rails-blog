@@ -31,17 +31,3 @@ RSpec.describe 'Users', type: :request do
     end
   end
 end
-
-# make a GET request
-# check the response body and/or status
-# describe 'GET users#show' do
-#     it 'should respond with status 200' do
-#       expect(response).to have_http_status(200)
-#     end
-#     it 'should render the show template' do
-#
-#     end
-#     it 'includes correct placeholder text in respond body' do
-#
-#     end
-#   end
