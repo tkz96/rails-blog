@@ -16,6 +16,20 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
+  describe 'GET users#show' do
+    before do
+      get '/users/1'
+    end
+    it 'should respond with status 200' do
+      expect(response).to have_http_status(200)
+    end
+    it 'should render the show template' do
+      expect(response).to render_template(:show)
+    end
+    it 'includes correct placeholder text in respond body' do
+      expect(response.body).to include('This is the user#index view')
+    end
+  end
 end
 
 # make a GET request
