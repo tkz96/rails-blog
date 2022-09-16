@@ -1,1 +1,8 @@
-<h1>This is the post#show view</h1>
+<h1><%= @posts.title %></h1>
+<br>
+<h2>by <%= @user.name %></h2>
+<div><%= @posts.text %></div>
+<br>
+<% @posts.comments.each do |comment| %>
+  <p><%=  @user.name %>: <%= comment.text %></p>
+<% end %>

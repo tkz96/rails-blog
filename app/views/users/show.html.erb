@@ -11,9 +11,12 @@
 
 <div>
   <p>Posts: </p>
-  <% @posts.each do |post| %>
+  <% @user.posts.each do |post| %>
   <div>
-    <%= post.title %>
+    <h3><%= post.title %></h3>
+    <br>
+    <%= post.text %>
+    <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
   </div>
   <% end %>
 </div>
