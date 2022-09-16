@@ -1,1 +1,19 @@
-<h1>This is the user#show view</h1>
+<div>
+  <img src='https://unsplash.com/photos/F_-0BxGuVvo' alt="user_image">
+</div>
+
+<div>
+  <p><%= @user.name %></p>
+  <p>Number of posts: <%= @user.posts_counter %></p>
+</div>
+
+<div><p>Bio: </p><%= @user.bio %></div>
+
+<div>
+  <p>Posts: </p>
+  <% @posts.each do |post| %>
+  <div>
+    <%= post.title %>
+  </div>
+  <% end %>
+</div>
