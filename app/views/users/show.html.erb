@@ -1,1 +1,24 @@
-<h1>This is the user#show view</h1>
+<div class="author-info">
+  <img class="black-border" src=<%= @user.photo %> alt="user_image">
+  <div class="black-border name-and-posts">
+    <h2><%= @user.name %></h2>
+    <p>Number of posts: <%= @user.posts_counter %></p>
+  </div>
+</div>
+
+<div class="bottom-margin black-border">
+  <h3>Bio:</h3>
+  <%= @user.bio %>
+</div>
+
+<div>
+  <% @user.posts.each do |post| %>
+  <div class="bottom-margin black-border">
+    <h3><%= post.title %></h3>
+    <br>
+    <%= post.text %>
+    <p class="right-align">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+  </div>
+  <% end %>
+  <button class="black-border">See all posts</button>
+</div>

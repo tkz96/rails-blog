@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :comments
+  has_many :comments, class_name: 'Comment', foreign_key: :post_id
   has_many :likes
 
   validates :title, presence: true
@@ -14,6 +14,6 @@ class Post < ApplicationRecord
 
   def five_most_recent_comments
     # A method which returns the 5 most recent comments for a given post.
-    comments.find_by(post_id).limit(5)
+    comments.order(created_at: :desc).limit(5)
   end
 end
