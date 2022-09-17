@@ -1,16 +1,15 @@
-<div>
-  <img src='https://unsplash.com/photos/F_-0BxGuVvo' alt="user_image">
-</div>
-
-<div>
-  <p><%= @user.name %></p>
-  <p>Number of posts: <%= @user.posts_counter %></p>
+<div class="author-info">
+  <img class="black-border" src=<%= @user.photo %> alt="user_image">
+  <div class="black-border name-and-posts">
+    <h2><%= @user.name %></h2>
+    <p>Number of posts: <%= @user.posts_counter %></p>
+  </div>
 </div>
 
 <div>
   <p>Posts: </p>
-  <% @user.posts.each do |post| %>
-    <div>
+  <% @posts.each do |post| %>
+    <div class="bottom-margin black-border">
       <h3><%= post.title %></h3>
       <br>
       <%= post.text %>
